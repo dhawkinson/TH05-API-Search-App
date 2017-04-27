@@ -1,0 +1,20 @@
+{
+  "album_type"              : "string",
+  "artists"                 : [ "array of simplified artist objects" ],
+  "available_markets"       : [ "array of strings" ],
+  "copyrights"              : [ "array of copyright objects" ],
+  "external_ids"            : { "external Id object"},
+  "external_urls"           : { "external URL object"},
+  "genres"                  : [ "array of strings" ],
+  "href"                    : "string",
+  "id"                      : "string",
+  "images"                  : [ "array of image objects" ],
+  "label"                   : "string",
+  "name"                    : "string",
+  "popularity"              : 100,
+  "release_date"            : "string",
+  "release_date_precision"  : "string",
+  "tracks"                  : [ "array of simplified artist objects inside a paging object" ],
+  "type"                    : "album",
+  "uri"                     : "The Spotify URI for the album"
+}

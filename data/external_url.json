@@ -1,0 +1,4 @@
+{
+  "type"  : "The type of the URL, for example:spotify",
+  "value" : "An external, public URL to the object"
+}

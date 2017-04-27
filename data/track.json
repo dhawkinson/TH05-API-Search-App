@@ -1,0 +1,17 @@
+{
+  "artists"           : [ "an array of simple artist objects" ],
+  "available_markets" : [ "array of strings" ],
+  "disc_number"       : 1,
+  "duration_ms"       : 4044,
+  "explicit"          : true,
+  "external_urls"     : { "external URL object"},
+  "href"              :	"string	 -  A link to the Web API endpoint providing full details of the track"
+  "id"                : "string  -  The Spotify ID for the track",
+  "is_playable"       :	true,
+  "linked_from"       : {"a linked track object"},
+  "name"              : "string  -  The name of the track",
+  "preview_url"       : "string  -  A URL to a 30 second preview (MP3 format) of the track. null if not available",
+  "track_number"      : 12,
+  "type"              : "track",
+  "uri"               : "string	 -  The Spotify URI for the track"
+}
