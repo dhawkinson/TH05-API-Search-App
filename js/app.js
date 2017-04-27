@@ -15,27 +15,32 @@
      **************************************************************/
 
     $("form").submit(function(e) {
-        e.preventDefault;                                               //     prevent default behavior
-        let sourceAPI = "https://api.spotify.com/v1/search";            //     Spotify API endpoint
+        e.preventDefault();                                               //    prevent default behavior
+        const apiEndpoint = "https://api.spotify.com/v1/search";          //    spotify API base
         let albumName = $("input")[0].value;
         let pos       = albumName.indexOf(" ");
         while ( !(pos === -1) ) {
             albumName = albumName.substring(0, pos)+"+"+albumName.substring(pos+1,albumName.length); //     replace spaces with +s
             pos       = albumName.indexOf(" ");
         }
-        let query = "?q=" + albumName + "&type=album";                   //     album name & search type
+        //     album name & search type
+        //let qParts = "q="+ albumName +"&type=album";
+            let qParts = {
+                query : albumName,
+                type  : "album"
+            };
 
         //  json GET request
-        $.getJSON(sourceAPI+query, function() {
+        $.getJSON(apiEndpoint,qParts, function(response) {
             //      build up the list Items
             $(".desc").hide();                                           //     hide the search placeholder
             let listHTML;                                                //     initialize the list
             //     iterate for the results
             $.each(response.albums.items, function(i,album){
-                listHTML += '<li><a href="' + $album.external_urls.spotify + '" target="_blank" id=' + $i;
-                listHTML += '<div class="album-wrap"><img class="album-art" src="' + $album.images[0].url + '"></div>';
-                listHTML += '<span class="album-title">' + $album.name + '</span>';
-                listHTML += '<span class="album-artist">' + $album.artists[0].name + '</span></a></li>';
+                listHTML += '<li><a href="' + album.external_urls.spotify + '" target="_blank" id=' + i;
+                listHTML += '<div class="album-wrap"><img class="album-art" src="' + album.images[0].url + '"></div>';
+                listHTML += '<span class="album-title">' + album.name + '</span>';
+                listHTML += '<span class="album-artist">' + album.artists[0].name + '</span></a></li>';
             });
             //  append and show results
             $("#albums").append(listHTML);                               //     insert the results
