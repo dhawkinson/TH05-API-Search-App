@@ -2,7 +2,7 @@
   Element Styles
 ==================================== */
 
-* {
+{
   box-sizing: border-box;
 }
 
@@ -108,11 +108,18 @@ button {
 
 /* album LIST COMPONENTS -------- */
 
+.desc {
+    color: #b0b0b0;
+}
+
+.no-albums {
+    color: lightcoral;
+}
+
 .no-albums,
 .desc  {
-  color: #b0b0b0;
   height: 140px;
-  margin-top: 50px;
+  margin: 50px auto;
   text-align: center;
   font-size: 1.25em;
 }
@@ -128,8 +135,8 @@ button {
 
 .album-title {
   display: block;
-  font-size: 1.1em;
-  line-height: 1.2;
+  font-size: 1em;
+  line-height: 1.1;
   color: #000;
   font-weight: 500;
 }
@@ -216,7 +223,8 @@ button {
     width: 50%;
   }
 
-  .album-list .desc {
+  .album-list .desc,
+  .album-list .no-albums{
     width: 100%;
     float: none;
   }
