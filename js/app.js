@@ -19,9 +19,6 @@
         e.preventDefault();                                               //    prevent default behavior
         const apiEndpoint = "https://api.spotify.com/v1/search";          //    spotify API base
         let albumName = $("input")[0].value;
-        if ( albumName === "" ) {
-
-        }
         let pos       = albumName.indexOf(" ");
         while ( !(pos === -1) ) {
             albumName = albumName.substring(0, pos)+"+"+albumName.substring(pos+1,albumName.length); //     replace spaces with +s
