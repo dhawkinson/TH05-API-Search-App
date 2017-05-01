@@ -19,9 +19,6 @@
         e.preventDefault();                                               //    prevent default behavior
         const apiEndpoint = "https://api.spotify.com/v1/search";          //    spotify API base
         let albumName = $("input")[0].value;
-        if ( albumName === "" ) {
-
-        }
         let pos       = albumName.indexOf(" ");
         while ( !(pos === -1) ) {
             albumName = albumName.substring(0, pos)+"+"+albumName.substring(pos+1,albumName.length); //     replace spaces with +s
@@ -42,7 +39,6 @@
             let albumList = response;
             //     iterate for the results
             $.each(response.albums.items, function(i,album){
-                //listHTML += '<li class="album"><a href="#top" id="' + response.albums.items[i].href[i] +'">';
                 listHTML += '<li class="album-details"><a href="#top" id="' +album.external_urls.spotify+'">';
                 listHTML += '<div class="album-wrap"><img class="album-art" src="' + album.images[0].url + '"></div>';
                 listHTML += '<span class="album-title">' + album.name + '</span>';
@@ -64,7 +60,6 @@
      *******************************************************************/
 
     $("img.album-art").click(function(e) {
-        e.preventDefault;
         let album = this.parent.parent.parent;
         let albumHref = album.attr("id");
 
