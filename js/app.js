@@ -59,8 +59,8 @@
      *      click for album details
      *******************************************************************/
 
-    $("img.album-art").click(function(e) {
-        let album = this.parent.parent.parent;
+    $("li.album-details").click(function() {
+        let album = this;
         let albumHref = album.attr("id");
 
         //  json GET request
