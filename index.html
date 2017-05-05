@@ -8,26 +8,27 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-    <div id="top" class="main-header">
-        <div class="inner">
-            <h1 class="main-title">AlbumSearch</h1>
-            <form class="search-form">
-                <label class="is-hidden" for="search">Search for music...</label>
-                <input type="search" name="search" id="search" placeholder="Search for Music..."/>
-                <button type="submit" id="submit" class="search-button"><i class="material-icons icn-search">search</i></button>
-            </form>
+    <div class="wrapper">
+        <div id="top" class="main-header">
+            <div class="inner">
+                <h1 class="main-title">AlbumSearch</h1>
+                <form class="search-form">
+                    <label class="is-hidden" for="search">Search for music...</label>
+                    <input type="search" name="search" id="search" placeholder="Search for Music..."/>
+                    <button type="submit" id="submit" class="search-button"><i class="material-icons icn-search">search</i></button>
+                </form>
+            </div>
         </div>
-    </div>
 
-    <div class="main-content clearfix">
-        <ul id="albums" class="album-list">
-          <li class="desc">
-              <i class="material-icons icn-album">album</i>
-              Search for your favorite albums!
-          </li>
-          <!--  search results go here  (js insert)   -->
-        </ul>
+        <div class="main-content clearfix">
+            <ul id="albums" class="album-list">
+                <li class="desc">
+                    <i class="material-icons icn-album">album</i>
+                    Search for your favorite albums!
+                </li>
+                <!--  search results go here  (js insert)   -->
+            </ul>
+        </div>
     </div>
 
     <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
