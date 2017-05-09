@@ -108,43 +108,45 @@
                     `;
             });
             // build up the page
-            let div       = document.createElement("div");
-            div.id        = "track-content";
-            div.innerHTML = `
-                            <div class="master-container">
-                                <div class="banner-container">
-                                    <div class="flex-item1">
-                                        <a class="return" href="#top">< search results</a>
-                                        <img class="album-cover" src="${record.images[0].url}" alt="${record.name}">
-                                    </div>
-                                    <div class="flex-item2">
-                                        <h2 class="name">${name} ${year}</h2>
-                                        <h3 class="artist">${artists}</h3>
-                                    </div>
-                                </div>
-                                <div class="tracks-container">
-                                    <div class="flex-item3"></div>
-                                    <div class="flex-item4">
-                                        <h3>track list:</h3>
-                                        <ol class="track-list">${tracksHTML}</ol>
-                                    </div>
-                                </div>
+            //let div       = document.createElement("div");
+            //div.id        = "track-content";
+            let div =
+                    `
+                    <div id="flex-container">
+                        <div id="cover-container">
+                            <div id="flex-item1" class="return">
+                                <a class="return-link" href="#top">< search results</a>
+    
                             </div>
-                            `;
+                            <a href="${record.external_urls.spotify}" id="flex-item2" class="music">
+                                <img class="album-cover" src="${record.images[0].url}" alt="${record.name}"></a>
+                            </a>
+                        </div>
+                        <div id="tracks-container">
+                            <div id="flex-item3" class="nomenclature">
+                                <h2 class="name">${name} ${year}</h2>
+                                <h3 class="artist">${artists}</h3>
+                            </div>
+                            <div id="flex-item4" class="track-list">
+                                <h3>track list:</h3>
+                                <ol class="tracks">${tracksHTML}</ol>
+                            </div>
+                        </div>
+                    </div>
+                    `;
             $(".wrapper").append(div);
             $(".main-content").hide();
-            $(".track-content").show();
+            $("#flex-container").show();
 
         });
     });
 
     //  return to search results
-    $(".wrapper").on("click", "a.return", function() {
-        $("#track-content").remove();
+    $(".wrapper").on("click", "a.return-link", function() {
+        $("#flex-container").remove();
         $(".main-content").show();
 
     });
-
 }());                   // closing module pattern
 
 /************************************************
@@ -166,5 +168,7 @@
                 </div>
 
  album.external_urls.spotify
+
+ https://play.spotify.com/album/50o7kf2wLwVmOTVYJOTplm
 
  */
