@@ -33,11 +33,11 @@ Let users know when search returns no album data
 
 To get an "exceeds" rating, you can expand on the project in the following ways:
 
-    Link an album to its Spotify page
-            Wrap the album art image In an "a" tag that links an album to its spotify.com listing
-            For example: Luck Of The Draw
-    Create an album description page
-            Use the “albums” endpoint and the album id to get details for an album if clicked
-            Load or link to a description page displaying a album's title, year, album art, tracklist, and artist
-            You'll need to write the CSS for this new page
-            See the 'description-page.png' mockup in the 'examples' folder of the project files
+Link an album to its Spotify page
+        Wrap the album art image In an "a" tag that links an album to its spotify.com listing
+        For example: Luck Of The Draw
+Create an album description page
+        Use the “albums” endpoint and the album id to get details for an album if clicked
+        Load or link to a description page displaying a album's title, year, album art, tracklist, and artist
+        You'll need to write the CSS for this new page
+        See the 'description-page.png' mockup in the 'examples' folder of the project files
